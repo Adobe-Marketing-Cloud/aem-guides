@@ -2,7 +2,7 @@
 
 ## Search application overview
 
-![Simple Search Application](//helpx.adobe.com/content/help/en/experience-manager/kt/sites/using/simple-search-implementation-guide/_jcr_content/main-pars/image_2094777936.img.png/simple-search-application.png)
+![Simple Search Application](https://helpx.adobe.com/experience-manager/kt/sites/using/simple-search-implementation-guide/_jcr_content/main-pars/image_2094777936.img.png/simple-search-application.png)
 
 1. **HTL** defines the **HTML** presentation layer, and uses **Sling Models** to obtain the the results to display.2. The **Sling Models** are Java data models that represent results.3. The **Predicate Factory OSGi services** collect and sanitize query parameters from the HTTP Request or the configured resources.4. Each **Provider OSGi service** is engages with AEM (QueryBuilder or Oak) to obtain results.5. **QueryBuilder** converts the provided query parameters to a Xpath query and executes the query.6. **Oak query engine** selects the best index for the query and collects results7. Custom **JavaScript** makes AJAX calls to collect JSON results    * Steps 2-6 in the above flow is invoked8. The **Sling Model Exporter** framework serializes the Sling Model results into JSON, for DOM injection by the JavaScript   * Powers Suggestions and Quick Links
 
