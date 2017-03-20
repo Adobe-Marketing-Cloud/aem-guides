@@ -1,0 +1,104 @@
+@import (reference) "/etc/clientlibs/simple/main/css/variables.less";
+
+.search-field {
+  @search-field--width: 100%;
+  @search-field--button--width: 4rem;
+  @search-field--border-color: (@base-color--dark);
+
+  position: relative;
+  width: 100%;
+
+  .search-field--wrapper {
+    position: relative;
+
+    input[type="text"] {
+      border: solid 1px @search-field--border-color;
+      font-size: 2rem;
+      padding: 1rem (@search-field--button--width + 1rem) 1rem 1rem;
+      width: @search-field--width;
+      .border-box;
+    }
+
+    input[type="submit"] {
+      position: absolute;
+      top: .25rem;
+      right: .25rem;
+      padding: 1rem - .25rem;
+
+      border: 0;
+      border-radius: 4px;
+      background-color: @action-color;
+
+      color: white;
+      font-size: 2rem;
+      width: @search-field--button--width;
+    }
+
+  }
+  /* Search Field - -Autocomplete */
+
+  .quick-lists {
+    background-color: @bg-color;
+    border: solid 1px @search-field--border-color;
+    border-top-style: dashed;
+    display: none;
+    left: 0;
+    margin-top: -1px;
+    position: absolute;
+    width: @search-field--width;
+    .border-box;
+
+    dl, dt, dd {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      padding: 1rem;
+      text-decoration: none;
+      display: block;
+
+      &:hover {
+        background-color: @base-color;
+      }
+    }
+
+    .quick-suggestions,
+    .quick-results {
+      display: none;
+
+      dt {
+        padding: 1rem 0 .5rem 1rem;
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: bold;
+        font-style: italic;
+      }
+    }
+
+    .quick-suggestions {
+      background-color: @base-color;
+      font-size: .8rem;
+      padding-bottom: 1rem;
+
+      dd {
+        padding: .4rem 1rem;
+        font-style: italic;
+        cursor:pointer;
+      }
+    }
+
+    .quick-results {
+      a {
+        padding: 1rem;
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+          background-color: @base-color;
+        }
+      }
+    }
+  }
+}

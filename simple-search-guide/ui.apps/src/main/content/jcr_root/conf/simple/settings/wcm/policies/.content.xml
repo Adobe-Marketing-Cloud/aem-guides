@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <wcm jcr:primaryType="nt:unstructured">
+        <foundation jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <responsivegrid jcr:primaryType="nt:unstructured">
+                    <simple-structure
+                        jcr:description="Policy for templates to allow structure components"
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Simple Structure"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[group:Simple Structure,/libs/wcm/foundation/components/responsivegrid]"
+                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="we-retail/components/content/image"
+                                    type="Images"/>
+                                <product
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="product"
+                                    droptarget="product-data-reference"
+                                    resourceType="commerce/components/product"
+                                    type="Products"/>
+                                <flash
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="application/x-shockwave-flash"
+                                    droptarget="flash"
+                                    resourceType="foundation/components/flash"
+                                    type="Images"/>
+                                <document
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="[application/vnd.openxmlformats,application/msword,application/vnd.ms-powerpoint,application/mspowerpoint,application/powerpoint,application/x-mspowerpoint,application/x-msexcel,application/x-excel,application/excel,application/vnd.ms-excel,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document]"
+                                    droptarget="file"
+                                    resourceType="foundation/components/download"
+                                    type="Images"/>
+                                <video
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="video/*"
+                                    droptarget="video"
+                                    resourceType="foundation/components/video"
+                                    type="Images"/>
+                                <fragment
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="text/html"
+                                    droptarget="fragment"
+                                    resourceType="we-retail/components/content/content-fragment"
+                                    type="Content Fragment"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
+                    </simple-structure>
+                    <simple-site-components
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Simple Components"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/dam/cfm/components/contentfragment,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/foundation/components/image,/libs/wcm/foundation/components/responsivegrid,/libs/foundation/components/text,/libs/foundation/components/title,group:Simple]">
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"/>
+                    </simple-site-components>
+                    <policy_534176045069605
+                        jcr:description="Summit Lab L4080 content"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="L4080 Content"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/foundation/components/image,/libs/foundation/components/text,/libs/foundation/components/title,group:L4080 Content]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_534176045069605>
+                </responsivegrid>
+            </components>
+        </foundation>
+    </wcm>
+    <simple jcr:primaryType="nt:unstructured">
+        <components jcr:primaryType="nt:unstructured">
+            <page jcr:primaryType="nt:unstructured">
+                <header jcr:primaryType="nt:unstructured">
+                    <global-header-policy
+                        jcr:description="Global header policy used for the English site."
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Simple Global Header"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        homePagePath="/content/simple/en"
+                        logoIcon="fa-bullseye"
+                        navStartLevel="2"
+                        searchResultsPath="/content/simple/en/search-results"
+                        siteName="mysite"
+                        topNavPages="[/content/simple/en/solutions,/content/simple/en/about,/content/simple/en/customer]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </global-header-policy>
+                </header>
+            </page>
+        </components>
+    </simple>
+</jcr:root>

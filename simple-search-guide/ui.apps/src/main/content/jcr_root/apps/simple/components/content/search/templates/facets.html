@@ -1,0 +1,23 @@
+<template data-sly-template.facets>
+
+    <button class="search-facet-toggle">
+        <coral-icon role="img" size="s" icon="accordionUp"></coral-icon>
+        <coral-icon role="img" size="s" icon="accordionDown"></coral-icon>
+    </button>
+    <div class="search-facets--content" data-sly-use.searchFacets="com.adobe.aem.sample.simple.search.SearchFacets"
+         data-sly-list.predicateGroup="${searchFacets.predicateGroups}">
+
+        <dl data-sly-test="${predicateGroup.options.size > 0}">
+            <dt>${predicateGroup.title}</dt>
+
+            <dd data-sly-list.option="${predicateGroup.options}">
+                <input id="search-facets--group--${predicateGroup.name}--${option.value}"
+                       type="checkbox"
+                       name="${predicateGroup.name}"
+                       value="${option.value}"
+                       data-sly-attribute.checked="${option.active}"/>
+                <label for="search-facets--group--${predicateGroup.name}--${option.value}">${option.label}</label>
+            </dd>
+        </dl>
+    </div>
+</template>

@@ -1,0 +1,13 @@
+<div class="component"
+     data-sly-use.template="search-results-entry.html"
+     data-sly-use.searchResults="com.adobe.aem.sample.simple.search.SearchResults">
+
+    <span class="search-results--time-taken">Time taken: ${searchResults.timeTaken} seconds</span>
+    <h2>Search results</h2>
+
+    <ul data-sly-list.result="${searchResults.results}">
+        <li data-sly-call="${template.searchResult @ entry = result}"></li>
+    </ul>
+
+    <div data-sly-test="${searchResults.results.size == 0}">No Results</div>
+</div>

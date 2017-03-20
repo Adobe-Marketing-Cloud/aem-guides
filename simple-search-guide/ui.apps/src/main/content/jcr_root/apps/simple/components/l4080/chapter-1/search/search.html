@@ -1,0 +1,14 @@
+<form   action=""
+        role="search"
+        method="get"
+        class="component"
+        data-sly-use.searchResults="com.adobe.aem.sample.simple.search.SearchResults"
+        data-sly-use.searchField="search-field.html"
+        data-sly-use.results="results.html">
+
+    <!-- Search Field -->
+    <section class="search-field" data-sly-call="${searchField.searchField @ searchResults = searchResults}"></section>
+
+    <!-- Search Results -->
+    <section class="search-results" data-sly-call="${results.results @ searchResults = searchResults}"></section>
+</form>

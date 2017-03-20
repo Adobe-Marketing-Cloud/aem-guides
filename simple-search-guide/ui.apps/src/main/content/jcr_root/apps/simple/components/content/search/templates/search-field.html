@@ -1,0 +1,19 @@
+<template data-sly-template.searchField="${ @ searchResults}">
+	<div class="search-field--wrapper">
+        <input type="text" name="q" placeholder="Search..." autocomplete="off" value="${searchResults.searchTerm}">
+            <input type="submit" value="Go"/>
+        </input>
+
+        <!-- Quick results overlay -->
+        <div class="quick-lists" data-quick-lists>
+            <dl class="quick-suggestions" data-quick-suggestions>
+                <dt>Suggested search terms....</dt>
+            </dl>
+
+            <dl class="quick-results" data-quick-results>
+                <dt>Quick results</dt>
+            </dl>
+        </div>
+    </div>
+</template>
+

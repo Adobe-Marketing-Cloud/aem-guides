@@ -1,0 +1,33 @@
+<form  class="component"
+       role="search"
+       method="get"
+       action="/content/simple/en/search-results.html"
+       data-url="${currentPage.path}/_jcr_content/search.results.json"
+       data-sly-use.searchResults="com.adobe.aem.sample.simple.search.SearchResults">
+
+    <!-- Search facets -->
+    <div data-sly-resource="${'search-facets' @ resourceType='simple/components/content/search-facets'}"></div>
+
+    <!-- Search input -->
+    <div class="search-field--wrapper">
+        <input class="search-field--input" type="text" name="q" placeholder="Search..." autocomplete="off"
+               value="${searchResults.searchTerm}">
+            <input class="search-field--button" type="submit" value="Go"/>
+        </input>
+
+        <!-- Autocomplete overlay -->
+        <div class="search-field--results">
+            <div class="search-field--results--suggestions">
+                <h3 class="header">Suggested search terms...</h3>
+                <ul class="list"></ul>
+            </div>
+
+            <div class="search-field--results--results">
+                <h3 class="header">Quick results</h3>
+                <ul class="list"></ul>
+            </div>
+        </div>
+    </div>
+
+</form>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:vlt="http://www.day.com/jcr/vault/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Simple Site Project Package"
+    jcr:primaryType="vlt:PackageDefinition"
+    sling:resourceType="cq/packaging/components/pack/definition"
+    buildCount="1"
+    cqVersion="6.2"
+    group="aem-samples"
+    name="simple"
+    path="/etc/packages/aem-samples/simple.ui.apps-0.0.1-SNAPSHOT"
+    version="0.0.1-SNAPSHOT">
+    <filter jcr:primaryType="nt:unstructured">
+        <f0
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/apps/simple"
+            rules="[]"/>
+
+
+        <f2
+            jcr:primaryType="nt:unstructured"
+            mode="merge"
+            root="/conf/simple"
+            rules="[]"/>
+
+
+        <f3
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/etc/clientlibs/simple"
+            rules="[]"/>
+
+
+        <f4
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/etc/designs/simple"
+
+            rules="[include:/etc/designs/simple/jcr:content]"/>
+
+    </filter>
+</jcr:root>

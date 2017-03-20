@@ -1,0 +1,16 @@
+<template data-sly-template.pagination="${ @ searchResults}">
+    <ul class="pagination"
+            data-sly-test="${searchResults.pagination.size > 1}">
+        <li data-sly-list.option="${searchResults.pagination}">
+            <input id="search-pagination--${option.label}"
+                   type="radio"
+                   name="offset"
+                   value="${option.offset}"
+                   data-sly-attribute.checked="${option.active}"
+                   data-sly-attribute.disabled="${option.disabled}"/>
+            <label for="search-pagination--${option.label}">${option.label}</label>
+        </li>
+    </ul>
+</template>
+
+

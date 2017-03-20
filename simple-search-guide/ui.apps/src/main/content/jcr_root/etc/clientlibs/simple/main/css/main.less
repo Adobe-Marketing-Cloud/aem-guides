@@ -1,0 +1,93 @@
+@emphasis-color: #ff453a;
+@action-color: @emphasis-color;
+@text-color: #333;
+
+@base-color: #f0f0f0;
+@base-color--dark: darken(@base-color, 15%);
+@base-color--light: lighten(@base-color, 5%);
+
+@bg-color: white;
+
+/** Mixins **/
+
+.border-box {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+.component {
+  border: dashed 1px #ccc;
+  border-radius: 2px;
+  padding: .5rem;
+  .border-box;
+}
+
+/** HTML **/
+
+
+hr {
+  border-width: 0 0 1px 0;
+  color: @base-color;
+}
+
+input {
+  outline: none;
+}
+
+a {
+  color: @text-color;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: @emphasis-color;
+    text-decoration: underline;
+  }
+}
+
+/** Page Structure **/
+
+.header .component {
+  height: 90px;
+  .component;
+  //background-color: @background-color;
+  //border-bottom: solid 10px @background-color--emphasis;
+
+  @logo-size: 2.5rem;
+  .logo {
+    border: (@logo-size / 3) solid @emphasis-color;
+    border-radius: ((@logo-size / 3) + @logo-size);
+    height: @logo-size;
+    width: @logo-size;
+
+    /* Structure */
+    float: left;
+    margin-left: 10px;
+
+  }
+}
+
+.footer .component {
+  .component;
+
+  * {
+    color: #ccc;
+    font-size: .9rem;
+    font-weight: normal;
+  }
+
+  /* Structure */
+  ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,11 @@
+<div class="container">
+	<sly data-sly-use.body="body.js"
+		 data-sly-use.templatedContainer="com.day.cq.wcm.foundation.TemplatedContainer"/>
+	<sly data-sly-test="${!templatedContainer.hasStructureSupport}"
+    	 data-sly-resource="${body.resourcePath @ resourceType='wcm/foundation/components/parsys'}"/>
+	<sly data-sly-test="${templatedContainer.hasStructureSupport}"
+    	 data-sly-repeat.child="${templatedContainer.structureResources}"
+    	 data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div'}"/>
+	<div data-sly-resource="${'cloudservices' @ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}" data-sly-unwrap></div>
+	<sly data-sly-include="footerlibs.html" />
+</div>

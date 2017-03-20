@@ -1,0 +1,17 @@
+<template data-sly-template.searchResult="${ @ entry}">
+	<div class="search-results--entry">
+
+		<div class="search-results--entry--thumbnail"></div>
+
+		<div class="search-results--entry--info">
+			<a href="${entry.path @ extension = 'html' }">
+				<img data-sly-test="${entry.thumbnail}" src="${entry.thumbnail}" alt="${entry.title}"/>
+				<h3 class="search-results--title">${entry.title}</h3>
+			</a>
+			<p class="search-results--entry--description"
+			   data-sly-test="entry.description">${entry.description @ context = 'html'}</p>
+		</div>
+	</div>
+</template>
+
+

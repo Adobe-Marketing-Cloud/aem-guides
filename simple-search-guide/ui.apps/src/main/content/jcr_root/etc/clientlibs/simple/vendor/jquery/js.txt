@@ -1,0 +1,5 @@
+#base=.
+
+jquery-3.1.1.min.js
+plugins/jquery.loadTemplate.min.js
+plugins/jquery.ba-throttle-debounce.min.js

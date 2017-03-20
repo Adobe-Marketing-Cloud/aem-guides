@@ -1,0 +1,33 @@
+<template data-sly-template.results="${ @ searchResults}">
+	<span data-sly-test="${searchResults.timeTaken >= 0}" class="search-stats">Time taken: <b>${searchResults.timeTaken} milliseconds</b></span>
+	<span data-sly-test="${searchResults.resultTotal}" class="search-stats">Total: <b>${searchResults.resultTotal}</b></span>
+	<h2>Search results</h2>
+
+	<ul data-sly-list.result="${searchResults.results}">
+		<li class="${properties.resultStyle @context='attribute'}">
+
+			<div class="thumbnail"
+				 data-sly-test="${properties.resultStyle == 'thumbnail'}"
+				 data-sly-use.icon="${'use/icon.js' @ tagIds = result.tagIds}">
+
+				<a href="${result.path @ extension = 'html' }">
+					<coral-icon
+							role="img"
+							size="L"
+							icon="${icon.name}"
+							aria-label="${result.title}"></coral-icon></a>
+			</div>
+
+			<div class="info">
+				<a href="${result.path @ extension = 'html' }" target="simple--docs-page">
+					<h3>${result.title}</h3>
+				</a>
+				<p data-sly-test="${properties.useExcerpt == 'true' }">${result.description @ context = 'html'}</p>
+			</div>
+
+			<div style="clear: both;"></div>
+		</li>
+	</ul>
+
+	<div data-sly-test="${searchResults.results.size == 0}">No Results</div>
+</template>

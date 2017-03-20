@@ -1,0 +1,7 @@
+<div class="component search-facets"
+     data-sly-use.template="search-facets-group.html"
+     data-sly-use.searchFacets="com.adobe.aem.sample.simple.search.SearchFacets">
+     <div data-sly-list.predicateGroup="${searchFacets.predicateGroups}">
+         <div data-sly-call="${template.predicateGroup @ groupTitle = predicateGroup.title, groupName = predicateGroup.name, options = predicateGroup.options}"></div>
+     </div>
+</div>

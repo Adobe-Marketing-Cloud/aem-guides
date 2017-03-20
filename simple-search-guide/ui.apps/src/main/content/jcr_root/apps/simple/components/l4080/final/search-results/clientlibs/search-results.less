@@ -1,0 +1,46 @@
+/* This should have ONLY structural CSS */
+
+@search-results--entry--thumbnail--width: 100px;
+@search-results--entry--thumbnail--height: (2/3) * @search-results--entry--thumbnail--width;
+
+.search-results {
+  ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .search-results--time-taken {
+    font-size: .9rem;
+    float: right;
+    font-style: italic;
+  }
+
+  .search-results--entry {
+    border-bottom: solid 1px #ccc;
+    min-height: @search-results--entry--thumbnail--height + 10px;
+    clear: both;
+
+    .search-results--entry--thumbnail {
+      float: left;
+      width: @search-results--entry--thumbnail--width;
+      height: @search-results--entry--thumbnail--height;
+      border: dotted 1px #ccc;
+    }
+
+    .search-results--entry--info {
+      margin-left: @search-results--entry--thumbnail--width + 20px;
+      clear: right;
+
+      .search-results--entry--title {
+        font-weight: bold;
+      }
+
+      .search-results--entry--description {
+        strong {
+          color: red;
+        }
+      }
+    }
+  }
+}

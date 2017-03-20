@@ -1,0 +1,16 @@
+<form   action=""
+        role="search"
+        method="get"
+        class="component"
+        data-sly-use.searchResults="com.adobe.aem.sample.simple.search.SearchResults"
+        data-sly-use.facets="facets.html"
+        data-sly-use.results="results.html">
+
+    <!-- Search Facets -->
+    <section class="search-facets" data-sly-call="${facets.facets}"></section>
+
+    <hr/>
+
+    <!-- Search Results -->
+    <section class="search-results" data-sly-call="${results.results @ searchResults = searchResults}"></section>
+</form>

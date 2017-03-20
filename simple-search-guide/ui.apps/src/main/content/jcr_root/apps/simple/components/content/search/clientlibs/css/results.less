@@ -1,0 +1,79 @@
+@import (reference) "/etc/clientlibs/simple/main/css/variables.less";
+
+.search-results {
+  @thumbnail--width: 100px;
+
+  ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .search-stats {
+    font-size: .9rem;
+    float: right;
+    font-style: italic;
+    padding-right: .5rem;
+  }
+
+  li {
+    border-bottom: solid 1px #ccc;
+    clear: both;
+
+    .info {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -ms-word-break: break-all;
+      word-break: break-word;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+
+      font-size: .9rem;
+      line-height: 1.25rem;
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: normal;
+        margin: .75rem 0 .5rem 0;
+        padding-top: .25rem;
+      }
+
+      p {
+
+        margin-top: 0;
+
+        strong {
+          // Handle excerpts
+          color: @emphasis-color;
+        }
+      }
+    }
+  }
+
+  li.thumbnail {
+    padding-bottom: .75rem;
+
+    .info {
+      margin-left: @thumbnail--width + 20px;
+    }
+
+    .thumbnail {
+      float: left;
+      width: @thumbnail--width;
+      border: solid 1px @base-color--dark;
+      border-radius: 2px;
+      text-align: center;
+      padding: 1rem 0;
+
+      a {
+        color: @second-text-color;
+      }
+      a:hover {
+        color: @emphasis-color;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,42 @@
+@import (reference) "/etc/clientlibs/simple/main/css/variables.less";
+
+.search-pagination {
+  @inactive: #999;
+  @active: @emphasis-color;
+
+  margin: 1rem auto;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      margin: 0 .5rem 0 0;
+      padding: 0;
+      display: inline-block;
+    }
+  }
+
+  input[type=radio] {
+    display: none;
+  }
+
+  label {
+    border: solid 1px @inactive;
+    color: @inactive;
+
+    padding: .25rem .5rem;
+    font-size: .9rem;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+
+  input[type=radio]:checked + label {
+    color: @active;
+    border-color: @active;
+  }
+}

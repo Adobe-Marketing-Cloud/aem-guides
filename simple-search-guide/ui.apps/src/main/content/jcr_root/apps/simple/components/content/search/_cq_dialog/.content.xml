@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Search Results Dialog"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Search Results"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                granite:class="cq-siteadmin-admin-properties-tabs"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                size="L">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <searchPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Specify search path to be used"
+                                        fieldLabel="Search Path"
+                                        name="./searchPaths"
+                                        rootPath="/content"/>
+                                    <useExcerpt
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        fieldDescription="use granite excerpt in search results"
+                                        name="./useExcerpt"
+                                        text="Use Excerpt"
+                                        uncheckedValue="false"
+                                        value="true"/>
+                                    <resultStyle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Choose the result display style"
+                                        fieldLabel="Result Display Style"
+                                        name="./resultStyle">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <plain
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Plain"
+                                                value="plain"/>
+                                            <thumbnail
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Thumbnails"
+                                                value="thumbnail"/>
+                                        </items>
+                                    </resultStyle>
+                                </items>
+                            </column>
+                        </items>
+                    </general>
+                    <facets
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Facets"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <showFacets
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        fieldDescription="show search facet filters"
+                                        name="./showFacets"
+                                        text="Show Facets"
+                                        uncheckedValue="false"
+                                        value="true"/>
+                                </items>
+                            </column>
+                        </items>
+                    </facets>
+                    <pagination
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Pagination"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <showPagination
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        fieldDescription="add pagination to bottom of search results"
+                                        name="./showPagination"
+                                        text="Show Pagination"
+                                        uncheckedValue="false"
+                                        value="true"/>
+                                    <resultLimit
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                        fieldDescription="defines the number of result hits to display per page"
+                                        fieldLabel="Result Limit"
+                                        max="100"
+                                        min="-1"
+                                        name="./limit"
+                                        step="1"
+                                        value="10"/>
+                                    <guessTotal
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="defines the amount querybuilder should guess at the results. leave blank to turn off guess total"
+                                        fieldLabel="Guess Total"
+                                        name="./guessTotal"/>
+                                </items>
+                            </column>
+                        </items>
+                    </pagination>
+                    <autocomplete
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Autocomplete"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <showSuggestions
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        fieldDescription="show search suggestions in autocomplete"
+                                        name="./showSuggestions"
+                                        text="Show Suggestions"
+                                        uncheckedValue="false"
+                                        value="true"/>
+                                    <showQuickResults
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        fieldDescription="show quick results in autocomplete"
+                                        name="./showQuickResults"
+                                        text="Show Quick Results"
+                                        uncheckedValue="false"
+                                        value="true"/>
+                                </items>
+                            </column>
+                        </items>
+                    </autocomplete>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

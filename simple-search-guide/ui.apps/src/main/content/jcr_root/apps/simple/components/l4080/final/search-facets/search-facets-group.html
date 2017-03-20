@@ -1,0 +1,16 @@
+<template data-sly-template.predicateGroup="${ @ groupTitle, groupName, options }">
+    <h4 class="search-facets--group--title">${groupTitle}</h4>
+
+    <ul class="search-facets--group">
+        <li data-sly-list.option="${options}">
+            <input id="search-facets--group--${groupName}--${option.value}"
+                   class="search-facets--facet--checkbox"
+                   type="checkbox"
+                   name="${groupName}"
+                   value="${option.value}"
+                   data-sly-attribute.checked="${option.active}"/>
+            <label for="search-facets--group--${groupName}--${option.value}"
+                   class="search-facets--facet--label">${option.label}</label>
+        </li>
+    </ul>
+</template>

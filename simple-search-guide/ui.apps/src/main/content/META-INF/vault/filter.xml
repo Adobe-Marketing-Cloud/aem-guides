@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/simple"/>
+
+    <filter root="/conf/simple" mode="merge"/>
+
+    <filter root="/etc/clientlibs/simple"/>
+    <filter root="/etc/clientlibs/summit/l4080"/>
+
+    <filter root="/etc/designs/simple">
+        <include pattern="/etc/designs/simple/jcr:content"/>
+    </filter>
+
+    <filter root="/content/summit/l4080" mode="merge" />
+</workspaceFilter>

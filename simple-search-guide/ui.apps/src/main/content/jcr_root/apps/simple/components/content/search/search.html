@@ -1,0 +1,29 @@
+<form   action=""
+        role="search"
+        method="get"
+        class="component"
+        data-quick-suggestions-enabled="${properties.showSuggestions}"
+        data-quick-suggestions="${resource.path}/quick-suggestions.suggestions.json"
+
+		data-quick-search-results-enabled="${properties.showQuickResults}"
+        data-quick-search-results="${resource.path}/quick-results.results.json"
+
+        data-sly-use.searchResults="com.adobe.aem.sample.simple.search.SearchResults"
+        data-sly-use.facets="templates/facets.html"
+        data-sly-use.searchField="templates/search-field.html"
+        data-sly-use.results="templates/results.html"
+        data-sly-use.pagination="templates/pagination.html">
+
+    <!-- Search Field -->
+    <section class="search-field" data-sly-call="${searchField.searchField @ searchResults = searchResults}"></section>
+
+    <!-- Search Facets -->
+    <section data-sly-test="${properties.showFacets == 'true'}" class="search-facets open" data-sly-call="${facets.facets}"></section>
+
+    <!-- Search Results -->
+    <section class="search-results" data-sly-call="${results.results @ searchResults = searchResults}"></section>
+
+    <!-- Search Results Pagination -->
+    <section class="search-pagination" data-sly-test="${properties.showPagination == 'true'}" 
+    								   data-sly-call="${pagination.pagination @ searchResults = searchResults}"></section>
+</form>

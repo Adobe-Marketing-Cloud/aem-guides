@@ -1,0 +1,25 @@
+@emphasis-color: #ff6b59;
+@action-color: @emphasis-color;
+@text-color: #333;
+@second-text-color: lighten(@text-color, 30%);
+
+@base-color: #f0f0f0;
+@base-color--dark: darken(@base-color, 15%);
+@base-color--light: lighten(@base-color, 5%);
+
+@bg-color: white;
+
+/** Mixins **/
+
+.border-box {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+.component {
+  border: dashed 1px #ccc;
+  border-radius: 2px;
+  padding: .5rem;
+  .border-box;
+}

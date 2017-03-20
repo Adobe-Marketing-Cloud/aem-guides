@@ -1,0 +1,19 @@
+<!--/*
+
+   Displays content for the page in a simple fashion
+
+*/-->
+
+<div class="display-content--main component">
+	<h1>${currentPage.title}</h1>
+
+<section class="display-content--body" data-sly-use.display="com.adobe.aem.sample.simple.models.DisplayContent"
+	 data-sly-list.paragraph="${display.docsContent}">
+	<div>${paragraph @ context='html'}</div>
+</section>
+ <section class="display-content--similar">
+   		<sly data-sly-resource="${'similar-results' @ resourceType='simple/components/content/similar-results'}"></sly>
+	</section>
+</div>
+
+
