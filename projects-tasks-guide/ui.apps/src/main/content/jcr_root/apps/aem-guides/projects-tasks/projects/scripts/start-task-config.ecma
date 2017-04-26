@@ -1,0 +1,42 @@
+// start-task-config.ecma
+// Populate the task using values stored as workflow metadata originally posted by the start workflow wizard
+
+// set the assignee based on start workflow wizard
+var assignee = workflowData.getMetaDataMap().get("assignee", Packages.java.lang.String);
+task.setCurrentAssignee(assignee);
+
+//Set the due date for the initial task based on start workflow wizard
+var dueDate = workflowData.getMetaDataMap().get("taskDueDate", Packages.java.util.Date);
+if (dueDate != null) {
+    task.setProperty("taskDueDate", dueDate);
+}
+
+
+//Set the priority based on start workflow wizard
+var taskPriority = workflowData.getMetaDataMap().get("taskPriority", "Medium");
+task.setProperty("taskPriority", taskPriority);
+
+var lastAction = workflowData.getMetaDataMap().get("lastTaskAction","");
+
+
+//change the title and priority if the approver group sent back the content
+if(lastAction == "Send Back for Revision") {
+  var taskName = "Review and Revise Content";
+
+  //since the content was rejected we will set the priority to High for the revison task
+  task.setProperty("taskPriority", "High"); 
+
+  //set the Task name (displayed as the task title in the Inbox) 
+  task.setProperty("name", taskName);
+  task.setProperty("nameHierarchy", taskName);
+  
+  //set the due date of this task 1 day from current date
+  var calDueDate = Packages.java.util.Calendar.getInstance();
+  calDueDate.add(Packages.java.util.Calendar.DATE, 1);
+  task.setProperty("taskDueDate", calDueDate.getTime());
+  
+}
+
+
+
+

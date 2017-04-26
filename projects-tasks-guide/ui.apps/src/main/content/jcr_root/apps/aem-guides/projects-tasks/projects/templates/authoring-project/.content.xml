@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="A project to manage approval and publish process for AEM Sites or Assets"
+    jcr:primaryType="cq:Template"
+    jcr:title="Authoring Project"
+    ranking="{Long}1"
+    wizard="/libs/cq/core/content/projects/wizard/steps/defaultproject.html">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        detailsHref="/projects/details.html"/>
+    <gadgets jcr:primaryType="nt:unstructured">
+        <team
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Team"
+            sling:resourceType="cq/gui/components/projects/admin/pod/teampod"
+            cardWeight="60"/>
+        <tasks
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Tasks"
+            sling:resourceType="cq/gui/components/projects/admin/pod/taskpod"
+            cardWeight="100"/>
+        <work
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Workflows"
+            sling:resourceType="cq/gui/components/projects/admin/pod/workpod"
+            cardWeight="80"/>
+        <experiences
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Experiences"
+            sling:resourceType="cq/gui/components/projects/admin/pod/channelpod"
+            cardWeight="90"/>
+        <projectinfo
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Project Info"
+            sling:resourceType="cq/gui/components/projects/admin/pod/projectinfopod"
+            cardWeight="100"/>
+    </gadgets>
+    <roles jcr:primaryType="nt:unstructured">
+        <approvers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Approvers"
+            roleclass="owner"
+            roleid="approvers"/>
+    </roles>
+    <workflows
+        jcr:primaryType="nt:unstructured"
+        tags="[]">
+        <models jcr:primaryType="nt:unstructured">
+            <contentapproval
+                jcr:primaryType="nt:unstructured"
+                modelId="/etc/workflow/models/aem-guides/content-approval-workflow/jcr:content/model"
+                wizard="/apps/aem-guides/projects-tasks/projects/wizards/content-approval-start.html"/>
+        </models>
+    </workflows>
+</jcr:root>
