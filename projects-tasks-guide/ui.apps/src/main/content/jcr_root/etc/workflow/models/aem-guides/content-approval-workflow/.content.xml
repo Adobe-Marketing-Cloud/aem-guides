@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/default"
+        cq:lastModified="{Date}2017-01-20T13:59:16.179-05:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:description="This workflow allows you to assign content to a user for review, submit for approval and publish following approval."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Content Approval Workflow"
+        sling:resourceType="cq/workflow/components/pages/model"
+        workflowStages="[Edit Content,Approval,Publish]">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <taskworkflowstep
+                jcr:created="{Date}2016-11-21T11:37:35.673-05:00"
+                jcr:createdBy="admin"
+                jcr:description="This the first task in the Workflow"
+                jcr:lastModified="{Date}2017-01-20T13:58:54.800-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Start Task Creation"
+                sling:resourceType="cq/projects/taskworkflowstep"
+                PROCESS="com.adobe.cq.projects.impl.workflow.ProjectTaskWorkflowProcess"
+                PROCESS_AUTO_ADVANCE="false"
+                PROCESS_PERSIST_ANONYMOUS_WORKITEM="true">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    argActions="[Normal Approval,Rush Approval,Bypass Approval]"
+                    argTaskDescription="Edit the content and finalize for approval. Once finished submit for approval."
+                    argTaskDueDeltaDays="2"
+                    argTaskName="Edit Content"
+                    argTaskPriority="Medium"
+                    onCreateScript="/apps/aem-guides/projects-tasks/projects/scripts/start-task-config.ecma"
+                    PROCESS="com.adobe.cq.projects.impl.workflow.ProjectTaskWorkflowProcess"
+                    PROCESS_AUTO_ADVANCE="false"
+                    PROCESS_PERSIST_ANONYMOUS_WORKITEM="true"
+                    workflowStage="Edit Content"/>
+            </taskworkflowstep>
+            <or
+                jcr:created="{Date}2016-11-22T14:20:27.093-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-11-22T14:21:18.539-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/workflow/components/model/or"
+                branches="3"
+                orSplit="true"
+                script1="function check() {&#xa;var lastAction = workflowData.getMetaDataMap().get(&quot;lastTaskAction&quot;,&quot;&quot;);&#xa; &#xa;if(lastAction == &quot;Normal Approval&quot;) {&#xa;    return true;&#xa;}&#xa; &#xa;return false;&#xa;}"
+                script2="function check() {&#xa;var lastAction = workflowData.getMetaDataMap().get(&quot;lastTaskAction&quot;,&quot;&quot;);&#xa; &#xa;if(lastAction == &quot;Rush Approval&quot;) {&#xa;    return true;&#xa;}&#xa; &#xa;return false;&#xa;}"
+                script3="function check() {&#xa;var lastAction = workflowData.getMetaDataMap().get(&quot;lastTaskAction&quot;,&quot;&quot;);&#xa; &#xa;if(lastAction == &quot;Bypass Approval&quot;) {&#xa;    return true;&#xa;}&#xa; &#xa;return false;&#xa;}">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <taskworkflowstep
+                        jcr:created="{Date}2016-11-22T14:21:30.005-05:00"
+                        jcr:createdBy="admin"
+                        jcr:description="Create a an approval task for Project Approvers. Priority is Medium."
+                        jcr:lastModified="{Date}2017-01-20T13:42:36.319-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Approval Task Creation"
+                        sling:resourceType="cq/projects/taskworkflowstep"
+                        PROCESS="com.adobe.cq.projects.impl.workflow.ProjectTaskWorkflowProcess"
+                        PROCESS_AUTO_ADVANCE="false"
+                        PROCESS_PERSIST_ANONYMOUS_WORKITEM="true">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            argActions="[Approve and Publish,Send Back for Revision]"
+                            argTaskDescription="Approve this content for publication."
+                            argTaskDueDeltaDays="5"
+                            argTaskName="Approve Content for Publish"
+                            argTaskPriority="Medium"
+                            PROCESS="com.adobe.cq.projects.impl.workflow.ProjectTaskWorkflowProcess"
+                            PROCESS_AUTO_ADVANCE="false"
+                            PROCESS_PERSIST_ANONYMOUS_WORKITEM="true"
+                            script="var projectApproverGrp = workflowData.getMetaDataMap().get(&quot;project.group.approvers&quot;,&quot;administrators&quot;);&#xa;&#xa;task.setCurrentAssignee(projectApproverGrp);"
+                            workflowStage="Approval"/>
+                    </taskworkflowstep>
+                </_x0031_>
+                <_x0032_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <taskworkflowstep
+                        jcr:created="{Date}2016-11-22T14:38:53.430-05:00"
+                        jcr:createdBy="admin"
+                        jcr:description="Create a an approval task for Project Approvers. Priority is High."
+                        jcr:lastModified="{Date}2017-01-20T13:42:48.116-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Rush Approval Task Creation"
+                        sling:resourceType="cq/projects/taskworkflowstep"
+                        PROCESS="com.adobe.cq.projects.impl.workflow.ProjectTaskWorkflowProcess"
+                        PROCESS_AUTO_ADVANCE="false"
+                        PROCESS_PERSIST_ANONYMOUS_WORKITEM="true">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            argActions="[Approve and Publish,Send Back for Revision]"
+                            argTaskDescription="Rush approve this content for publication."
+                            argTaskDueDeltaDays="1"
+                            argTaskName="Rush Approve Content for Publish"
+                            argTaskPriority="High"
+                            PROCESS="com.adobe.cq.projects.impl.workflow.ProjectTaskWorkflowProcess"
+                            PROCESS_AUTO_ADVANCE="false"
+                            PROCESS_PERSIST_ANONYMOUS_WORKITEM="true"
+                            script="var projectApproverGrp = workflowData.getMetaDataMap().get(&quot;project.group.approvers&quot;,&quot;administrators&quot;);&#xa; &#xa;task.setCurrentAssignee(projectApproverGrp);"
+                            workflowStage="Approval"/>
+                    </taskworkflowstep>
+                </_x0032_>
+                <_x0033_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <noopprocess
+                        jcr:created="{Date}2016-11-22T14:45:51.071-05:00"
+                        jcr:createdBy="admin"
+                        jcr:description="Placeholder step to indicate that the original editor decided to bypass the approver group."
+                        jcr:lastModified="{Date}2016-11-22T14:50:26.242-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Bypass Approval"
+                        sling:resourceType="cq/workflow/components/workflow/noopprocess"
+                        PROCESS="/etc/workflow/scripts/noop.ecma"
+                        PROCESS_AUTO_ADVANCE="true">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="/etc/workflow/scripts/noop.ecma"
+                            PROCESS_AUTO_ADVANCE="true"/>
+                    </noopprocess>
+                </_x0033_>
+            </or>
+            <goto
+                jcr:created="{Date}2016-11-23T12:03:51.579-05:00"
+                jcr:createdBy="admin"
+                jcr:description="Based on the Approver groups action route the workflow to the beginning or continue and publish the payload."
+                jcr:lastModified="{Date}2017-01-20T13:59:16.172-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Goto Step"
+                sling:resourceType="cq/workflow/components/model/goto"
+                PROCESS="com.adobe.granite.workflow.core.process.GotoProcess"
+                PROCESS_AUTO_ADVANCE="false">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.granite.workflow.core.process.GotoProcess"
+                    PROCESS_AUTO_ADVANCE="false"
+                    script="function check() {&#xa;var lastAction = workflowData.getMetaDataMap().get(&quot;lastTaskAction&quot;,&quot;&quot;);&#xa;&#xa;if(lastAction == &quot;Send Back for Revision&quot;) {&#xa;    return true;&#xa;}&#xa;&#xa;return false;&#xa;}"
+                    TARGET_NODE_PATH="/etc/workflow/models/aem-guides/content-approval-workflow/jcr:content/flow/taskworkflowstep"/>
+            </goto>
+            <activateresourceproc
+                jcr:created="{Date}2016-11-23T13:53:21.760-05:00"
+                jcr:createdBy="admin"
+                jcr:description="A process to activate a page or asset"
+                jcr:lastModified="{Date}2016-11-23T13:53:21.760-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Activate Page/Asset"
+                sling:resourceType="wcm/workflow/components/workflow/activateresourceprocess">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.day.cq.wcm.workflow.process.ActivatePageProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </activateresourceproc>
+        </flow>
+        <image
+            jcr:lastModified="{Date}2016-11-23T12:03:26.292-05:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0">
+            <file/>
+        </image>
+        <model/>
+    </jcr:content>
+</jcr:root>

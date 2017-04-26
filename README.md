@@ -7,3 +7,7 @@ AEM Guides contains multiple AEM Maven projects that are code companions for a c
 ### [Simple Search Guide](https://github.com/Adobe-Marketing-Cloud/aem-guides/tree/master/simple-search-guide)
 
 Site search implementation that features full-text, predicate filtering, pagination, and auto-complete functionality
+
+### [Projects and Tasks Guide](https://github.com/Adobe-Marketing-Cloud/aem-guides/tree/master/projects-tasks-guide)
+
+Creates a custom Project Template and simple approval workflow that leverages Project Tasks

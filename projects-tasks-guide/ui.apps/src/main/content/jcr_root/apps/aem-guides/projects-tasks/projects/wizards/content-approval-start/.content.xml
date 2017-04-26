@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}true">
+        <items jcr:primaryType="nt:unstructured">
+            <column1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <details
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/projects/admin/card/workflowmodeldetailscard"
+                        workflowModelPath="${param.modelId}"/>
+                </items>
+            </column1>
+            <column2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="workflowTitle"
+                        required="{Boolean}true"/>
+                    <assign
+                        granite:class="js-cq-project-user-picker"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/projects/admin/userpicker"
+                        fieldLabel="Assign To"
+                        hideServiceUsers="{Boolean}true"
+                        impersonatesOnly="{Boolean}true"
+                        showOnlyProjectMembers="{Boolean}true"
+                        name="assignee"
+                        projectPath="${param.project}"
+                        required="{Boolean}true"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        fieldLabel="Description"
+                        name="startComment"
+                        rows="6"/>
+                    <contentpath
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                        fieldLabel="Content Path"
+                        name="contentPath"/>
+                    <priority
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Task Priority"
+                        name="taskPriority">
+                        <items jcr:primaryType="nt:unstructured">
+                            <high
+                                jcr:primaryType="nt:unstructured"
+                                text="High"
+                                value="High"/>
+                            <medium
+                                jcr:primaryType="nt:unstructured"
+                                selected="{Boolean}true"
+                                text="Medium"
+                                value="Medium"/>
+                            <low
+                                jcr:primaryType="nt:unstructured"
+                                text="Low"
+                                value="Low"/>
+                        </items>
+                    </priority>
+                    <duedate
+                        granite:rel="project-duedate"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                        displayedFormat="YYYY-MM-DD HH:mm"
+                        fieldLabel="Due Date"
+                        minDate="today"
+                        name="taskDueDate"
+                        type="datetime"/>
+                    <duedatetypehint
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                        name="taskDueDate@TypeHint"
+                        type="datetime"
+                        value="Calendar"/>
+                </items>
+            </column2>
+        </items>
+    </jcr:content>
+</jcr:root>

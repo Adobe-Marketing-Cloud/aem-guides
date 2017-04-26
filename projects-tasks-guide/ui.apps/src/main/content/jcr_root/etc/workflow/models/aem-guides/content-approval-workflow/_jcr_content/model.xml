@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}false"
+    jcr:primaryType="cq:WorkflowModel"
+    jcr:uuid="684d9d83-9b9c-4153-b17e-0b811cdc9e22"
+    sling:resourceType="cq/workflow/components/model"
+    description="This workflow allows you to assign content to a user for review, submit for approval and publish following approval."
+    title="Content Approval Workflow">
+    <metaData
+        cq:lastModified="{Long}1484938758220"
+        cq:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        workflowStages="[Edit Content,Approval,Publish]"/>
+    <nodes jcr:primaryType="nt:unstructured">
+        <node0
+            jcr:primaryType="cq:WorkflowNode"
+            title="Start"
+            type="START">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node0>
+        <node1
+            jcr:primaryType="cq:WorkflowNode"
+            description="This the first task in the Workflow"
+            title="Start Task Creation"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                argActions="[Normal Approval,Rush Approval,Bypass Approval]"
+                argTaskDescription="Edit the content and finalize for approval. Once finished submit for approval."
+                argTaskDueDeltaDays="2"
+                argTaskName="Edit Content"
+                argTaskPriority="Medium"
+                onCreateScript="/apps/aem-guides/projects-tasks/projects/scripts/start-task-config.ecma"
+                PROCESS="com.adobe.cq.projects.impl.workflow.ProjectTaskWorkflowProcess"
+                PROCESS_AUTO_ADVANCE="false"
+                PROCESS_PERSIST_ANONYMOUS_WORKITEM="true"
+                workflowStage="Edit Content"/>
+        </node1>
+        <node2
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_SPLIT"
+            type="OR_SPLIT">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node2>
+        <node3
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_JOIN"
+            type="OR_JOIN">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node3>
+        <node4
+            jcr:primaryType="cq:WorkflowNode"
+            description="Create a an approval task for Project Approvers. Priority is Medium."
+            title="Approval Task Creation"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                argActions="[Approve and Publish,Send Back for Revision]"
+                argTaskDescription="Approve this content for publication."
+                argTaskDueDeltaDays="5"
+                argTaskName="Approve Content for Publish"
+                argTaskPriority="Medium"
+                PROCESS="com.adobe.cq.projects.impl.workflow.ProjectTaskWorkflowProcess"
+                PROCESS_AUTO_ADVANCE="false"
+                PROCESS_PERSIST_ANONYMOUS_WORKITEM="true"
+                script="var projectApproverGrp = workflowData.getMetaDataMap().get(&quot;project.group.approvers&quot;,&quot;administrators&quot;);&#xa;&#xa;task.setCurrentAssignee(projectApproverGrp);"
+                workflowStage="Approval"/>
+        </node4>
+        <node5
+            jcr:primaryType="cq:WorkflowNode"
+            description="Create a an approval task for Project Approvers. Priority is High."
+            title="Rush Approval Task Creation"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                argActions="[Approve and Publish,Send Back for Revision]"
+                argTaskDescription="Rush approve this content for publication."
+                argTaskDueDeltaDays="1"
+                argTaskName="Rush Approve Content for Publish"
+                argTaskPriority="High"
+                PROCESS="com.adobe.cq.projects.impl.workflow.ProjectTaskWorkflowProcess"
+                PROCESS_AUTO_ADVANCE="false"
+                PROCESS_PERSIST_ANONYMOUS_WORKITEM="true"
+                script="var projectApproverGrp = workflowData.getMetaDataMap().get(&quot;project.group.approvers&quot;,&quot;administrators&quot;);&#xa; &#xa;task.setCurrentAssignee(projectApproverGrp);"
+                workflowStage="Approval"/>
+        </node5>
+        <node6
+            jcr:primaryType="cq:WorkflowNode"
+            description="Placeholder step to indicate that the original editor decided to bypass the approver group."
+            title="Bypass Approval"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="/etc/workflow/scripts/noop.ecma"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node6>
+        <node7
+            jcr:primaryType="cq:WorkflowNode"
+            description="Based on the Approver groups action route the workflow to the beginning or continue and publish the payload."
+            title="Goto Step"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.adobe.granite.workflow.core.process.GotoProcess"
+                PROCESS_AUTO_ADVANCE="false"
+                script="function check() {&#xa;var lastAction = workflowData.getMetaDataMap().get(&quot;lastTaskAction&quot;,&quot;&quot;);&#xa;&#xa;if(lastAction == &quot;Send Back for Revision&quot;) {&#xa;    return true;&#xa;}&#xa;&#xa;return false;&#xa;}"
+                TARGET_NODE_ID="node1"
+                TARGET_NODE_PATH="/etc/workflow/models/aem-guides/content-approval-workflow/jcr:content/flow/taskworkflowstep"/>
+        </node7>
+        <node8
+            jcr:primaryType="cq:WorkflowNode"
+            description="A process to activate a page or asset"
+            title="Activate Page/Asset"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.day.cq.wcm.workflow.process.ActivatePageProcess"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node8>
+        <node9
+            jcr:primaryType="cq:WorkflowNode"
+            title="End"
+            type="END">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node9>
+    </nodes>
+    <transitions jcr:primaryType="nt:unstructured">
+        <node0_x0023_node1
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node0"
+            rule=""
+            to="node1">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node0_x0023_node1>
+        <node1_x0023_node2
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node1"
+            to="node2">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node1_x0023_node2>
+        <node2_x0023_node4
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node2"
+            rule="function check() {&#xa;var lastAction = workflowData.getMetaDataMap().get(&quot;lastTaskAction&quot;,&quot;&quot;);&#xa; &#xa;if(lastAction == &quot;Normal Approval&quot;) {&#xa;    return true;&#xa;}&#xa; &#xa;return false;&#xa;}"
+            to="node4">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node2_x0023_node4>
+        <node4_x0023_node3
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node4"
+            to="node3">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node4_x0023_node3>
+        <node2_x0023_node5
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node2"
+            rule="function check() {&#xa;var lastAction = workflowData.getMetaDataMap().get(&quot;lastTaskAction&quot;,&quot;&quot;);&#xa; &#xa;if(lastAction == &quot;Rush Approval&quot;) {&#xa;    return true;&#xa;}&#xa; &#xa;return false;&#xa;}"
+            to="node5">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node2_x0023_node5>
+        <node5_x0023_node3
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node5"
+            to="node3">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node5_x0023_node3>
+        <node2_x0023_node6
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node2"
+            rule="function check() {&#xa;var lastAction = workflowData.getMetaDataMap().get(&quot;lastTaskAction&quot;,&quot;&quot;);&#xa; &#xa;if(lastAction == &quot;Bypass Approval&quot;) {&#xa;    return true;&#xa;}&#xa; &#xa;return false;&#xa;}"
+            to="node6">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node2_x0023_node6>
+        <node6_x0023_node3
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node6"
+            to="node3">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node6_x0023_node3>
+        <node3_x0023_node7
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node3"
+            rule=""
+            to="node7">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node3_x0023_node7>
+        <node7_x0023_node8
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node7"
+            rule=""
+            to="node8">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node7_x0023_node8>
+        <node8_x0023_node9
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node8"
+            to="node9">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node8_x0023_node9>
+    </transitions>
+</jcr:root>
