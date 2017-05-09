@@ -56,7 +56,7 @@ import com.day.cq.wcm.api.policies.ContentPolicyManager;
 @Exporter(name = Constants.EXPORTER_NAME, extensions = Constants.EXPORTER_EXTENSION)
 public class ImageImpl implements Image {
 
-    public static final String RESOURCE_TYPE = "aem-guides/asset-insights/components/content/image";
+    public static final String RESOURCE_TYPE = "aem-guides/asset-insights/components/content/image-core";
     public static final String DEFAULT_EXTENSION = "jpeg";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ImageImpl.class);

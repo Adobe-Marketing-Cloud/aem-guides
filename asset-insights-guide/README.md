@@ -1,6 +1,11 @@
 # Asset Insights Guide
 
-This a content package project generated using the AEM Multimodule Lazybones template.
+This is the code companion for [Setup Asset Insights with AEM Assets](https://helpx.adobe.com/experience-manager/kt/assets/using/asset-insights-tutorial-setup.html)
+
+It includes two sample components:
+
+* **Image Core** - */apps/aem-guides/asset-insights/components/content/image-core (AEM 6.3 only)* extends the [Core Image component](https://github.com/Adobe-Marketing-Cloud/aem-core-wcm-components/tree/master/content/src/content/jcr_root/apps/core/wcm/components/image/v1/image) by updating the Sling Model implementation. Asset Insight tags are turned off by default, in order to turn on configure the design/policy of the component under Features -> Asset Insights 
+* **Image Foundation** - */apps/aem-guides/asset-insights/components/content/image-foundation (AEM 6.2 and 6.3)* extends the HTL foundation Image component and uses an HTL JS class to calculate the Asset ID. 
 
 ## Building
 
