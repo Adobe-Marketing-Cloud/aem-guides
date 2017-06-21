@@ -1,6 +1,10 @@
 # WKND Sites Project
 
-This a content package project generated using the AEM Multimodule Lazybones template.
+This is the code companion to a multi-part series on HelpX:
+
+### [Getting Started with AEM Sites - WKND Tutorial](https://helpx.adobe.com/experience-manager/kt/sites/using/getting-started-wknd-tutorial-develop.html)
+
+1. [Part 1 - Project Setup](https://helpx.adobe.com/experience-manager/kt/sites/using/getting-started-wknd-tutorial-develop/part1.html)
 
 ## Building
 
