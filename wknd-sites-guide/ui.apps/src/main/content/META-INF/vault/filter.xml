@@ -4,6 +4,7 @@
 
 
     <filter root="/conf/wknd" mode="merge"/>
+    <filter root="/content/wknd" mode="merge"/>
 
 
 
