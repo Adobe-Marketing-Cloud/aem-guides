@@ -1,0 +1,7 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    scheduledpurge.daysold="7"
+    scheduledpurge.modelIds="[/etc/workflow/models/dam/update_asset/jcr:content/model,/etc/workflow/models/dam-xmp-writeback/jcr:content/model]"
+    scheduledpurge.name="DAM Workflows"
+    scheduledpurge.workflowStatus="COMPLETED"
+/>
