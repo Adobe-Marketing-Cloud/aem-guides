@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>FileVault Package Properties</comment>
+<entry key="buildCount">1</entry>
+<entry key="version">0.0.1-SNAPSHOT</entry>
+<entry key="dependencies" />
+<entry key="packageFormatVersion">2</entry>
+<entry key="description">WKND Sites Project Content Package</entry>
+<entry key="group">aem-guides/wknd</entry>
+<entry key="name">wknd-sites-guide</entry>
+<entry key="path">/etc/packages/aem-guides/wknd/wknd-sites-guide-0.0.1-SNAPSHOT.zip</entry>
+</properties>

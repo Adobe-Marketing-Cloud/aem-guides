@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:vlt="http://www.day.com/jcr/vault/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="WKND Sites Project Package"
+    jcr:primaryType="vlt:PackageDefinition"
+    sling:resourceType="cq/packaging/components/pack/definition"
+    buildCount="1"
+    cqVersion="6.3"
+    group="aem-guides/wknd"
+    name="wknd-sites-guide"
+    path="/etc/packages/aem-guides/wknd/wknd-sites-guide-0.0.1-SNAPSHOT"
+    version="0.0.1-SNAPSHOT">
+    <filter jcr:primaryType="nt:unstructured">
+        <f0
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/apps/wknd"
+            rules="[]"/>
+
+
+        <f2
+            jcr:primaryType="nt:unstructured"
+            mode="merge"
+            root="/conf/wknd"
+            rules="[]"/>
+
+
+
+    </filter>
+     <thumbnail.png/>
+</jcr:root>
+
+
+
