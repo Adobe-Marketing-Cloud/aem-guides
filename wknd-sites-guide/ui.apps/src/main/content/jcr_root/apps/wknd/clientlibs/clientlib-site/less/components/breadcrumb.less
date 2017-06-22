@@ -1,0 +1,50 @@
+//
+// WKND Breadcrumbs
+// --------------------------------------------------
+
+.cmp-breadcrumb {
+
+ .breadcrumb {
+  padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal 0px 0px;
+  margin-bottom: 0px;
+  margin-top:30px;
+  list-style: none;
+  background-color: @breadcrumb-bg;
+  border-radius: @border-radius-base;
+  font-size: @font-size-small;
+     
+  > li {
+    display: inline-block;
+    padding:10px 0px;
+    text-transform: uppercase;
+    + li:before {
+      font-family: 'Wkndicons';
+      content: "\e80d";
+      color: @brand-primary;
+    }
+      a {
+          color:  @breadcrumb-color;
+          text-decoration:none;
+          font-weight: bolder;
+          &:first {
+              padding-left: 0px;
+          }
+      }
+      &:first-child {
+          padding-left:0px;
+          }
+  }
+
+  > .active {
+    color: @breadcrumb-active-color;
+   
+  }
+    @media (max-width: @screen-md) {
+        margin-top: 0px;
+    } 
+    @media (max-width: @screen-xs) {
+        font-size: @font-size-small;
+    }
+ }      
+    
+}

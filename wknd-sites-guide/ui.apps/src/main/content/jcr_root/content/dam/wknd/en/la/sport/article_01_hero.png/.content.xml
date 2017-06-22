@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:Iptc4xmpCore="http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="331d94b9-3bea-4b81-b258-80ab11a39a98">
+    <jcr:content
+        cq:lastReplicated="{Date}2017-05-30T17:27:50.813-04:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        cq:name="article_01_hero.png"
+        cq:parentPath="/content/dam/wknd/en/la/sport"
+        dam:assetState="processed"
+        dam:relativePath="wknd/en/la/sport/article_01_hero.png"
+        jcr:lastModified="{Date}2017-05-30T12:17:02.009-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:extracted="{Date}2017-05-30T12:16:05.638-04:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}72"
+            dam:Physicalheightininches="{Decimal}9.085402488708496"
+            dam:Physicalwidthindpi="{Long}72"
+            dam:Physicalwidthininches="{Decimal}16.184242248535156"
+            dam:Progressive="no"
+            dam:sha1="53e12dbb5ac6390c89279e235a35f936dbd203c5"
+            dam:size="{Long}936972"
+            dc:description="hero image for Skate park"
+            dc:format="image/png"
+            dc:modified="{Date}2017-05-30T12:17:01.799-04:00"
+            dc:title="Skate Park LA"
+            jcr:lastModified="{Date}2017-05-30T12:17:01.799-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}654"
+            tiff:ImageWidth="{Long}1165">
+            <Iptc4xmpCore:CreatorContactInfo jcr:primaryType="nt:unstructured"/>
+        </metadata>
+        <related jcr:primaryType="nt:unstructured"/>
+        <usages
+            dam:score="{Long}4"
+            jcr:primaryType="nt:unstructured"
+            usedBy="[aem]">
+            <aem
+                jcr:primaryType="nt:unstructured"
+                count="{Long}4"
+                lastUsed="{Date}2017-06-12T15:49:03.263-04:00"/>
+        </usages>
+    </jcr:content>
+</jcr:root>
