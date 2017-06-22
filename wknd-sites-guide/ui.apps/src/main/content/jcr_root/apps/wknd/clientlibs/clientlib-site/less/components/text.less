@@ -1,0 +1,45 @@
+//
+// WKND Text
+// --------------------------------------------------
+
+.cmp-text {
+
+    p {
+    	*padding: 0 20px;
+    	text-align: justify;
+    }
+    
+	blockquote {
+    	 background-color:@brand-secondary;
+    	 padding:36px 60px;
+         font-size: @font-size-large;
+         float:left;
+         width:100%;
+        @media (max-width: @grid-float-breakpoint) {
+            font-size: @font-size-base;     
+        }
+        @media (max-width: @screen-xs) {
+            font-size: @font-size-base;
+            padding:36px 36px;
+        }
+    
+    }
+    
+    .quote-author {
+            font-size: @font-size-small;
+            font-family: @font-family-sans-serif;
+            text-transform: uppercase;
+            float:left;
+            margin-top: 1em;
+            width:100%;
+             
+            &:before {
+                border-top: 2px solid @brand-primary;
+                content: '';
+                display: block;
+                width: 80px;
+                
+            }
+      }
+
+}

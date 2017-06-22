@@ -1,0 +1,53 @@
+<!--/* Header Component for WKND Site 
+
+*/-->
+
+
+<header
+  		data-sly-use.header="com.adobe.aem.guides.wknd.models.Header"
+  		data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="cmp-mobile--toggle">
+          <button type="button" class="cmp-mobile--toggle-nav mobile-navbar-button" data-target="#navbar" >
+            <span class="sr-only">Toggle navigation</span>
+              <i class="wkndicon wkndicon-ico-bm" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="cmp-mobile--toggle-close mobile-navbar-button">
+            <span class="sr-only">Toggle Search Bar</span>
+              <i class="wkndicon wkndicon-ico-cross" aria-hidden="true"></i>
+          </button>
+          </div>
+          <a class="navbar-brand " href="${header.navigationRoot @ extension='html'}">WKND</a>
+          <div class="cmp-search-mobile ">
+               <form class="cmp-search-mobile--form">
+                   <button class="cmp-search-mobile--btn mobile-navbar-button" id="mobile-search-btn"><i class="wkndicon wkndicon-ico-search"></i></button>
+                   <input type="text" class="cmp-search-mobile--input form-control" placeholder="Search"> 
+              </form>
+          </div>   
+        </div>
+        <div id="navbar" class="cmp-navbar--links">
+           <div class="cmp-search-desktop">
+           <form class="navbar-form navbar-right cmp-search-desktop--form">
+               <div class="form-group">
+                   <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default"><i class="wkndicon wkndicon-ico-search"></i></button>
+          </form>
+          </div>
+          <ul class="nav navbar-nav navbar-right" 
+          	  data-sly-list.navItem="${header.items}">
+
+    		<li class="nav-item ${navItem.active || navItem.hierarchyActive ? 'active' : ''}">
+        		<a href="${navItem.url @ extension='html'}">
+            		<i class="wkndicon ${navItem.icon @ context='attribute'}"></i> ${navItem.text}
+        		</a>
+    		</li>
+    	</ul>
+     	</div>
+      </div>
+    </nav>
+</header>
+
+<sly data-sly-call="${template.placeholder @ isEmpty=header.items.size == 0}"></sly>

@@ -1,0 +1,64 @@
+@footer-background-color: #000;
+@footer-link-color: #fff;
+
+.cmp-footer {
+
+    footer {
+    	background: @footer-background-color;
+    	min-height: 365px;
+    	margin-top: 60px;
+    	float:left;
+
+    	@media (max-width: @grid-float-breakpoint) {
+            min-height:267px; 
+        }
+
+    }
+    
+    &--nav {
+        margin-top:5em;
+        margin-left:15px;
+        margin-right: 15px;
+        > li {
+            
+            float:left;
+            display: block;
+            
+            a {
+                font-size: @font-size-xsmall;
+                text-transform: uppercase;
+                color: @navbar-inverse-color;
+                height:10em;
+                width: 10em;
+                text-align: center;
+                padding-top:4em;
+                
+                &:hover,
+                &:focus {
+                    background-color: @brand-primary;
+                    color: @text-color;
+                }
+            
+                 @media (max-width: @grid-float-breakpoint) {
+                    height:5em;
+                    width: 10em;
+                     padding-top:1.5em;
+                }
+                
+            }
+             @media (max-width: @grid-float-breakpoint) {
+                margin:1em;    
+            }
+            
+        }
+        
+        .active > a {
+            background-color: @navbar-inverse-bg;
+            color: @brand-primary;
+        }
+    
+         @media (max-width: @grid-float-breakpoint) {
+            margin-top: 2em;    
+        }
+    }
+}
