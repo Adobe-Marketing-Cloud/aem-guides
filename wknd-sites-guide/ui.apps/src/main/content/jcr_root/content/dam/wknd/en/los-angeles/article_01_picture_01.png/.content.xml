@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:Iptc4xmpCore="http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="eaad1fe1-7d0a-4548-a447-be50b070078a">
+    <jcr:content
+        cq:name="article_01_picture_01.png"
+        cq:parentPath="/content/dam/wknd/en/la/sport"
+        dam:assetState="processed"
+        dam:relativePath="wknd/en/la/article_01_picture_01.png"
+        jcr:lastModified="{Date}2017-06-13T14:28:03.383-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:Comments="XML:com.adobe.xmp: &lt;?xpacket begin=&quot;﻿&quot; id=&quot;W5M0MpCehiHzreSzNTczkc9d&quot;?>&#xa;&lt;x:xmpmeta xmlns:x=&quot;adobe:ns:meta/&quot; x:xmptk=&quot;Adobe XMP Core 5.6-c137 1.000000, 0000/00/00-00:00:00        &quot;>&#xa; &lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;>&#xa;  &lt;rdf:Description rdf:about=&quot;&quot;&#xa;    xmlns:ns1=&quot;http://www.day.com/dam/1.0&quot;&#xa;    xmlns:tiff=&quot;http://ns.adobe.com/tiff/1.0/&quot;&#xa;    xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&#xa;    xmlns:Iptc4xmpCore=&quot;http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/&quot;&#xa;   ns1:Physicalheightininches=&quot;7.432248592376709&quot;&#xa;   ns1:Physicalwidthininches=&quot;10.627420425415039&quot;&#xa;   ns1:Fileformat=&quot;PNG&quot;&#xa;   ns1:Progressive=&quot;no&quot;&#xa;   ns1:extracted=&quot;2017-05-30T12:19:09.490-04:00&quot;&#xa;   ns1:Bitsperpixel=&quot;32&quot;&#xa;   ns1:MIMEtype=&quot;image/png&quot;&#xa;   ns1:Physicalwidthindpi=&quot;72&quot;&#xa;   ns1:Physicalheightindpi=&quot;72&quot;&#xa;   ns1:Numberofimages=&quot;1&quot;&#xa;   ns1:Numberoftextualcomments=&quot;0&quot;&#xa;   ns1:sha1=&quot;b61c46ef8e333e4461499835ef25d677a08ebcf2&quot;&#xa;   ns1:size=&quot;645189&quot;&#xa;   tiff:ImageLength=&quot;535&quot;&#xa;   tiff:ImageWidth=&quot;765&quot;&#xa;   dc:format=&quot;image/png&quot;&#xa;   dc:modified=&quot;2017-05-30T12:19:27.334-04:00&quot;>&#xa;   &lt;dc:description>&#xa;    &lt;rdf:Alt>&#xa;     &lt;rdf:li xml:lang=&quot;x-default&quot;>skate park bowl&lt;/rdf:li>&#xa;    &lt;/rdf:Alt>&#xa;   &lt;/dc:description>&#xa;   &lt;dc:title>&#xa;    &lt;rdf:Alt>&#xa;     &lt;rdf:li xml:lang=&quot;x-default&quot;>skate park bowl&lt;/rdf:li>&#xa;    &lt;/rdf:Alt>&#xa;   &lt;/dc:title>&#xa;   &lt;Iptc4xmpCore:CreatorContactInfo rdf:parseType=&quot;Resource&quot;/>&#xa;  &lt;/rdf:Description>&#xa; &lt;/rdf:RDF>&#xa;&lt;/x:xmpmeta>&#xa;&lt;?xpacket end=&quot;r&quot;?>&#xa;"
+            dam:extracted="{Date}2017-06-13T14:28:03.060-04:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}1"
+            dam:Physicalheightindpi="{Long}72"
+            dam:Physicalheightininches="{Decimal}7.432248592376709"
+            dam:Physicalwidthindpi="{Long}72"
+            dam:Physicalwidthininches="{Decimal}10.627420425415039"
+            dam:Progressive="no"
+            dam:sha1="8c00ce396ff9bd83ce8839ef05528ba25c785c4a"
+            dam:size="{Long}646640"
+            dc:description="skate park bowl"
+            dc:format="image/png"
+            dc:modified="{Date}2017-05-30T12:19:27.334-04:00"
+            dc:title="skate park bowl"
+            jcr:lastModified="{Date}2017-06-13T14:28:02.392-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}535"
+            tiff:ImageWidth="{Long}765">
+            <Iptc4xmpCore:CreatorContactInfo jcr:primaryType="nt:unstructured"/>
+        </metadata>
+        <related jcr:primaryType="nt:unstructured"/>
+        <usages
+            dam:score="{Long}6"
+            jcr:primaryType="nt:unstructured"
+            usedBy="[aem]">
+            <aem
+                jcr:primaryType="nt:unstructured"
+                count="{Long}6"
+                lastUsed="{Date}2017-06-12T15:59:15.868-04:00"/>
+        </usages>
+    </jcr:content>
+</jcr:root>

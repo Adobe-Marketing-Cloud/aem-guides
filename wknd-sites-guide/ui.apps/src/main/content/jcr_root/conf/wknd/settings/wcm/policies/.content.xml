@@ -2,34 +2,29 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
-    <rep:policy/>
     <wcm jcr:primaryType="nt:unstructured">
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
                 <responsivegrid jcr:primaryType="nt:unstructured">
                     <policy_384132260865240
                         jcr:description="WKND structure components for creating framework for templates."
-                        jcr:lastModified="{Date}2017-06-12T15:44:45.069-04:00"
+                        jcr:lastModified="{Date}2017-06-15T18:42:07.166-04:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="WKND Structure"
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="[/libs/wcm/foundation/components/responsivegrid,group:WKND.Content,group:WKND.Structure]">
-                        <jcr:content
-                            jcr:mixinTypes="[]"
-                            jcr:primaryType="nt:unstructured"/>
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
                     </policy_384132260865240>
                     <policy_390508703025941
                         jcr:description="policy for components that can be authored for WKND Site"
-                        jcr:lastModified="{Date}2017-06-12T15:46:35.648-04:00"
+                        jcr:lastModified="{Date}2017-06-15T18:52:31.560-04:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="WKND Content"
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="group:WKND.Content">
-                        <jcr:content
-                            jcr:mixinTypes="[]"
-                            jcr:primaryType="nt:unstructured"/>
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
                                 <mapping_1497296780771
@@ -174,7 +169,41 @@
                         </rtePlugins>
                     </policy_1497025762857>
                 </text>
+                <breadcrumb jcr:primaryType="nt:unstructured">
+                    <policy_1497892768658
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="WKND Breadcrumb"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        showHidden="false"
+                        hideCurrent="true"
+                        startLevel="3">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1497892768658>
+                </header>
             </content>
+            <structure jcr:primaryType="nt:unstructured">
+                <header jcr:primaryType="nt:unstructured">
+                    <policy_1497878630745
+                        jcr:description="WKND Header"
+                        jcr:lastModified="{Date}2017-06-19T09:24:29.717-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="WKND Header"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        relPath="root/header">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1497878630745>
+                </header>
+                <footer jcr:primaryType="nt:unstructured">
+                    <policy_1497892267009
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="WKND Footer"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        startLevel="2">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1497892267009>
+                </header>
+            </structure>
         </components>
     </wknd>
 </jcr:root>
