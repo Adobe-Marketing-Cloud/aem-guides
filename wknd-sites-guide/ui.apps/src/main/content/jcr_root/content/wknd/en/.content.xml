@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-06-12T15:48:02.104-04:00"
+        cq:lastModified="{Date}2017-06-14T11:37:46.757-04:00"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/wknd/settings/wcm/templates/article-template"
+        cq:template="/conf/wknd/settings/wcm/templates/landing-template"
         jcr:primaryType="cq:PageContent"
         jcr:title="English"
         sling:resourceType="wknd/components/structure/page">
@@ -12,36 +12,20 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
             <responsivegrid
-                jcr:created="{Date}2017-05-18T09:44:47.664-04:00"
+                jcr:created="{Date}2017-06-13T20:11:40.960-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-05-18T11:29:39.550-04:00"
+                jcr:lastModified="{Date}2017-06-13T20:11:44.134-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/foundation/components/responsivegrid">
-                <contentfragment
-                    jcr:created="{Date}2017-06-12T15:46:51.264-04:00"
-                    jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2017-06-12T15:46:51.264-04:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wknd/components/content/contentfragment"
-                    text="                    "/>
-            </responsivegrid>
-            <image
-                jcr:created="{Date}2017-06-12T15:44:51.362-04:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-06-12T15:44:59.185-04:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="wknd/components/content/image"/>
-            <title
-                jcr:created="{Date}2017-06-12T15:45:16.092-04:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-06-12T15:45:41.657-04:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="wknd/components/content/title"/>
+                sling:resourceType="wcm/foundation/components/responsivegrid"/>
         </root>
     </jcr:content>
-    <sport/>
+    <los-angeles/>
+    <new-york/>
+    <toronto/>
+    <london/>
+    <paris/>
+    <shanghai/>
+    <beijing/>
+    <tokyo/>
 </jcr:root>

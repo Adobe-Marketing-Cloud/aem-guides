@@ -2,47 +2,19 @@
 
 */-->
 
-
-<footer class="full-width">
+<footer class="full-width"
+	data-sly-use.footer="com.adobe.aem.guides.wknd.models.Footer"
+    data-sly-use.template="core/wcm/components/commons/v1/templates.html">
       <div class="container">
-          <ul class="cmp-footer--nav nav navbar-nav">
-            <li class="active"><a href="#">
-               Los Angeles.
-                </a>
-            </li>
-            <li><a href="#">
-                 New York.
-                </a>
-            </li>
-            <li><a href="#">
-                Toronto.
-                </a>
-            </li>
-            <li>
-            	<a href="#">
-                London.
-                </a> 
-            </li>
-            <li>
-                <a href="#">
-                    Paris.
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  Shanghai.
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  Beijing.
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  Tokyo.
-                </a>
-            </li>
+          <ul class="cmp-footer--nav nav navbar-nav" 
+              data-sly-list.navItem="${footer.items}">
+    		<li class="nav-item ${navItem.active || navItem.hierarchyActive ? 'active' : ''}">
+        		<a href="${navItem.url @ extension='html'}">
+            		${navItem.text}
+        		</a>
+    		</li>
           </ul>
       </div>
 </footer>
+
+<sly data-sly-call="${template.placeholder @ isEmpty=footer.items.size == 0}"></sly>
