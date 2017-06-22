@@ -4,5 +4,69 @@
 
 
 <header>
-	<h1>${currentPage.title ? currentPage.title : 'header'}</h1>
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="cmp-mobile--toggle">
+          <button type="button" class="cmp-mobile--toggle-nav mobile-navbar-button" data-target="#navbar" >
+            <span class="sr-only">Toggle navigation</span>
+              <i class="wkndicon wkndicon-ico-bm" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="cmp-mobile--toggle-close mobile-navbar-button">
+            <span class="sr-only">Toggle Search Bar</span>
+              <i class="wkndicon wkndicon-ico-cross" aria-hidden="true"></i>
+          </button>
+          </div>
+          <a class="navbar-brand " href="#">WKND</a>
+          <div class="cmp-search-mobile ">
+               <form class="cmp-search-mobile--form">
+                   <button class="cmp-search-mobile--btn mobile-navbar-button" id="mobile-search-btn"><i class="wkndicon wkndicon-ico-search"></i></button>
+                   <input type="text" class="cmp-search-mobile--input form-control" placeholder="Search">
+                 
+              </form>
+          </div>
+           
+        </div>
+        <div id="navbar" class="cmp-navbar--links">
+           <div class="cmp-search-desktop">
+           <form class="navbar-form navbar-right cmp-search-desktop--form">
+               <div class="form-group">
+                   <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default"><i class="wkndicon wkndicon-ico-search"></i></button>
+          </form>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">
+                <i class="wkndicon wkndicon-ico-restaurants"></i> Restaurants
+                </a>
+            </li>
+            <li><a href="#">
+                 <i class="wkndicon wkndicon-ico-bars"></i> Bars
+                </a>
+            </li>
+            <li class="active"><a href="#">
+                 <i class="wkndicon wkndicon-ico-sport"></i> Sport
+                </a>
+            </li>
+            <li><a href="#">
+                 <i class="wkndicon wkndicon-ico-art"></i> Art
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                     <i class="wkndicon wkndicon-ico-music"></i> Music
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="wkndicon wkndicon-ico-shopping"></i> Shopping
+                </a>
+            </li>
+          
+          </ul>
+        </div><!--/.nav-collapse -->
+       
+      </div>
+    </nav>
 </header>

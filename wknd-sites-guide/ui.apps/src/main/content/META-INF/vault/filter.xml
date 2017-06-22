@@ -3,7 +3,7 @@
     <filter root="/apps/wknd"/>
 
 
-    <filter root="/conf/wknd"/>
+    <filter root="/conf/wknd" />
     <filter root="/content/wknd"/>
 
 

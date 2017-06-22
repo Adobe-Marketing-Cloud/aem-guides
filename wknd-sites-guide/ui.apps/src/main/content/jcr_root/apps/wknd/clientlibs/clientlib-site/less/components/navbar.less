@@ -1,0 +1,266 @@
+// WKND navbar
+
+.cmp-header {
+
+.navbar {
+  background-color: transparent;
+  border: none;
+  height: 160px;
+  &.navbar-sticky {
+    background-color: @body-bg;
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.26);
+    box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.26);
+    }
+
+    @media (max-width: @grid-float-breakpoint) {
+        height:80px;
+        margin-bottom: 0px;
+    }
+    
+  .navbar-brand {
+    color: @navbar-default-brand-color;
+    font-weight:bolder;
+    font-size: @font-size-xlarge;
+    &:hover,
+    &:focus {
+      color: @navbar-default-brand-hover-color;
+      background-color: @navbar-default-brand-hover-bg;
+    }
+      
+     @media (max-width: @grid-float-breakpoint) {
+        font-size: @font-size-h3;
+         width: ~"calc(100% - 100px)";
+         text-align: center;
+         
+         &.open {
+             position:relative;
+             z-index: 20;
+             color: @navbar-inverse-color;
+             
+             &:hover,
+             &:focus {
+                 color: @navbar-inverse-color;
+             }
+         }
+         
+      }
+  }
+
+    .mobile-navbar-button {
+        border:none;
+        background:none;
+        padding:4px;
+        &:focus {
+            outline: none;
+        }
+        i {
+            font-size: 40px;
+        }
+    }
+
+  .navbar-header {
+    padding-top:48px;
+            
+    @media (max-width: @grid-float-breakpoint) {
+         padding-top:14px;
+        display:inline-block;
+        width:100%;
+        margin:0;
+    }
+        
+    }
+
+  .navbar-text {
+    color: @navbar-default-color;
+  }
+
+  .cmp-navbar--links {
+    @media (max-width: @grid-float-breakpoint) {
+            display:none;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+    &.open {
+    	display:block;
+    	}
+    }
+    
+  .navbar-nav {
+      padding-top:48px;
+    > li > a {
+      color: @navbar-default-link-color;
+      font-size: @navbar-font-size;
+      text-transform: uppercase;
+      font-weight: bolder;
+      padding: 15px 17px;
+
+      &:hover,
+      &:focus {
+        color: @navbar-default-link-hover-color;
+        background-color: @navbar-default-link-hover-bg;
+      }
+        & i {
+            display:none;
+        }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-default-link-color;
+        background-color: @navbar-default-link-active-bg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-default-link-disabled-color;
+        background-color: @navbar-default-link-disabled-bg;
+      }
+    }
+      
+    @media (max-width: @grid-float-breakpoint) {
+        width: 316px;
+        margin: auto;
+        padding-top: 10rem;
+        > li {
+            width: 158px;
+            height: 158px;
+            float:left;
+            & a {
+                color: @navbar-inverse-color;
+                text-align: center;
+                font-size: 14px;
+                height:100%;
+                padding-top:20px;
+            & i {
+                display:block;
+                font-size: 55px;
+                padding:10px;
+            }
+        }
+        
+        form {
+            display:none;
+        }
+        }
+        > .active > a {
+            background-color: @navbar-inverse-bg;
+            color: @brand-primary;
+        }
+      }
+      
+  }
+
+  .cmp-mobile--toggle {
+      display:none;
+    @media (max-width: @grid-float-breakpoint) {
+        float:left;
+        width:50px;
+        display:inherit;
+      }
+      
+      &-nav.open {
+          position:relative;
+          z-index: 20;
+          color:@navbar-inverse-color;
+      }
+        
+  }
+    /*
+  .navbar-toggle {
+    margin: 0px;
+    padding: 4px;
+    position: inherit;
+    float: left;
+      
+      
+    &:hover,
+    &:focus {
+      background-color: @navbar-default-toggle-hover-bg;
+    }
+    .icon-bar {
+      background-color: @navbar-default-toggle-icon-bar-bg;
+    }
+      i {
+          font-size:40px;
+      }
+  }*/
+
+  // Dropdown menu items
+  .navbar-nav {
+    // Remove background color from open dropdown
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @navbar-default-link-active-bg;
+        color: @navbar-default-link-active-color;
+      }
+    }
+
+    @media (max-width: @grid-float-breakpoint-max) {
+      // Dropdowns get custom display when collapsed
+      .open .dropdown-menu {
+        > li > a {
+          color: @navbar-default-link-color;
+          &:hover,
+          &:focus {
+            color: @navbar-default-link-hover-color;
+            background-color: @navbar-default-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-default-link-active-color;
+            background-color: @navbar-default-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-default-link-disabled-color;
+            background-color: @navbar-default-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+
+  // Links in navbars
+  //
+  // Add a class to ensure links outside the navbar nav are colored correctly.
+
+  .navbar-link {
+    color: @navbar-default-link-color;
+    &:hover {
+      color: @navbar-default-link-hover-color;
+    }
+  }
+
+  .btn-link {
+    color: @navbar-default-link-color;
+    &:hover,
+    &:focus {
+      color: @navbar-default-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: @navbar-default-link-disabled-color;
+      }
+    }
+  }
+}
+
+}
