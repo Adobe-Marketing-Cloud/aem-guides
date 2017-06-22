@@ -1,0 +1,18 @@
+
+/* In Author Mode change header position from fixed to static */
+
+
+@import (reference) "/apps/wknd/clientlibs/clientlib-site/less/common/variables.less";
+
+.wknd-site .navbar-fixed-top {
+	position: static;
+
+}
+
+.wknd-site {
+    margin-top: 0px;
+    
+     @media (max-width: @grid-float-breakpoint) {
+        margin-top:0px;     
+    }
+}

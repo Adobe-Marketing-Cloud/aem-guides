@@ -1,0 +1,9 @@
+<!--/*
+	- WKND body.html
+	- includes wknd class used as a selector for WKND site specific CSS
+*/-->
+<div class="wknd-site container">
+    <sly data-sly-use.templatedContainer="com.day.cq.wcm.foundation.TemplatedContainer"
+         data-sly-repeat.child="${templatedContainer.structureResources}"
+         data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div'}"/>
+</div>
