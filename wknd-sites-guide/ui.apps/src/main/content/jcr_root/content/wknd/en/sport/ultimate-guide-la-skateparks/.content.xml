@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-06-12T15:59:15.873-04:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/wknd/settings/wcm/templates/article-template"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Ultimate guide to LA skateparks."
+        sling:resourceType="wknd/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:created="{Date}2017-05-18T09:44:47.664-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-05-18T11:29:39.550-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <contentfragment
+                    jcr:created="{Date}2017-06-12T15:46:51.264-04:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-06-12T15:50:07.676-04:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wknd/components/content/contentfragment"
+                    fileReference="/content/dam/wknd/en/la/sport/ultimate-guide-to-la-skateparks"
+                    text="                                &#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;            Content Fragment Update. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Here is a link just to check the style. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed ut dui. Morbi malesuada nulla nec purus convallis consequat. Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur.&#xa;&#xa;                    &#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;            New Paragraph Title&#xa;&#xa;                    &#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;            Header 2&#xa;&#xa;                    &#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;            Header 3&#xa;&#xa;                    &#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;            In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Here is a link just to check the style. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed ut dui. Morbi malesuada nulla nec purus convallis consequat. Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur.&#xa;&#xa;&#xa;                    &#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;    &#xa;&#xa;                ">
+                    <par5
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/foundation/components/responsivegrid"/>
+                    <par1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="dam/cfm/components/grid">
+                        <text
+                            jcr:created="{Date}2017-06-12T15:57:57.363-04:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2017-06-12T15:58:58.885-04:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wknd/components/content/text"
+                            text="&lt;blockquote>This is some text. It will be part of a larger quote. Said by someone inspirational.&lt;br>&#xa;&lt;span class=&quot;quote-author&quot;>Famous Skateboarder&lt;/span>&lt;/blockquote>&#xa;"
+                            textIsRich="true"/>
+                    </par1>
+                    <par2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="dam/cfm/components/grid">
+                        <image
+                            jcr:created="{Date}2017-06-12T15:59:15.869-04:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2017-06-12T15:59:15.869-04:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wknd/components/content/image"
+                            fileReference="/content/dam/wknd/en/la/sport/article_01_picture_01.png"/>
+                    </par2>
+                </contentfragment>
+            </responsivegrid>
+            <image
+                jcr:created="{Date}2017-06-12T15:44:51.362-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-12T15:49:03.174-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wknd/components/content/image"
+                fileReference="/content/dam/wknd/en/la/sport/article_01_hero.png"/>
+            <title
+                jcr:created="{Date}2017-06-12T15:45:16.092-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-12T15:45:41.657-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wknd/components/content/title"/>
+        </root>
+    </jcr:content>
+</jcr:root>

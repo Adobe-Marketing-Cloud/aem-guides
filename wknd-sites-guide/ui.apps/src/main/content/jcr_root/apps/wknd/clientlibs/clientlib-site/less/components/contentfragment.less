@@ -1,0 +1,30 @@
+//
+// WKND Content Fragment
+// --------------------------------------------------
+
+.cmp-contentfragment {
+	 font-family: @font-family-serif;
+	 
+ 	p {
+        line-height: (@line-height-base + 1);
+    }
+    
+    h1,h2, h3 {
+        margin-bottom: 22px;
+        &:after {
+            border-bottom: 2px solid @brand-primary;
+            content: '';
+            display: block;
+            width: 84px; 
+            padding-top:8px;
+        }
+    }
+    
+    h2:after {
+    	width:64px;
+    }
+    
+    h3:after {
+    	width:44px;
+    	}
+}

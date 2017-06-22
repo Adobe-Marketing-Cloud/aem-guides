@@ -4,7 +4,8 @@
 
 
     <filter root="/conf/wknd" />
-    <filter root="/content/wknd"/>
+    <filter root="/content/wknd" />
+    <filter root="/content/dam/wknd"/>
 
 
 
