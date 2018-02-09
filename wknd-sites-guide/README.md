@@ -1,4 +1,6 @@
-# WKND Sites Project
+# [Deprecated] WKND Sites Project
+
+## This project has moved to: [aem-guides-wknd](https://github.com/Adobe-Marketing-Cloud/aem-guides-wknd)
 
 This is the code companion to a multi-part series on HelpX:
 
