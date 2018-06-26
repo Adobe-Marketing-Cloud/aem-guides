@@ -1,3 +1,0 @@
-#base=css
-header.less
-richtexteditor.less

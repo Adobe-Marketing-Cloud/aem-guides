@@ -1,3 +1,0 @@
-#base=src/less
-
-bootstrap.less

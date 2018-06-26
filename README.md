@@ -4,6 +4,10 @@ AEM Guides contains multiple AEM Maven projects that are code companions for a c
 
 ## Current Guides
 
+### [SPA Editor HelloWorld Guide](https://github.com/Adobe-Marketing-Cloud/aem-guides/tree/master/spa-helloworld-guide)
+
+Highlights the steps needed to map a SPA component to an AEM component to enable in-context editing by building a simple HelloWorld component.
+
 ### [Simple Search Guide](https://github.com/Adobe-Marketing-Cloud/aem-guides/tree/master/simple-search-guide)
 
 Site search implementation that features full-text, predicate filtering, pagination, and auto-complete functionality
@@ -18,6 +22,4 @@ Provides two examples of extending foundation and core Image components to add t
 
 ### [Deprecated] [WKND Sites Guide](https://github.com/Adobe-Marketing-Cloud/aem-guides/tree/master/wknd-sites-guide)
 
-## This project has moved to [aem-guides-wknd](https://github.com/Adobe-Marketing-Cloud/aem-guides-wknd)
-
-A multi-part tutorial designed for developers new to AEM. Walks through the implementation of an AEM site for a fictitious lifestyle brand the WKND. Covers fundamental topics like project setup, Core Components, editable templates, client libraries and component development.
+* This project has moved to [aem-guides-wknd](https://github.com/Adobe-Marketing-Cloud/aem-guides-wknd)
