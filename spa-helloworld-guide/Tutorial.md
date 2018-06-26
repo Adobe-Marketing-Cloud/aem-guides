@@ -167,7 +167,7 @@ Sling Models are also used in the SPA use case to implement server-side business
 
 ![fig 5](./images/fig5.png)
 
-The ComponentExporter interface is the interface that must be implemented in order to be compatible with AEM Content Services.
+The ComponentExporter interface must be implemented in order for the Sling Model to be compatible with AEM Content Services.
 
 3. Within the class add the following static variable to identify the HelloWorld component's resource type.
 
