@@ -1,4 +1,4 @@
-## Mini Tutorial
+## Getting Started with the AEM SPA Editor - HelloWorld Tutorial
 
 AEM's SPA Editor provides support for incontext editing of a Single Page Application or SPA. This tutorial is an introduction to SPA development to be used with AEM's SPA Editor JS SDK. The tutorial will extend the We.Retail Journal app by adding a custom **Hello World** component.
 
