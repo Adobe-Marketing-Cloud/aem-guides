@@ -1,6 +1,6 @@
 ## Mini Tutorial
 
-AEM's SPA Editor provides support for incontext editing of a Single Page Application or SPA. This tutorial is an introduction to SPA development to be used with AEM's SPA Editor JS SDK. The tutorial will extend the We.Retail Journal app, an existing React.js SPA, by adding a custom **Hello World** component.
+AEM's SPA Editor provides support for incontext editing of a Single Page Application or SPA. This tutorial is an introduction to SPA development to be used with AEM's SPA Editor JS SDK. The tutorial will extend the We.Retail Journal app by adding a custom **Hello World** component.
 
 This tutorial is intended to highlight the steps needed to map a SPA component to an AEM component to enable in-context editing. Users starting this tutorial should be familiar with basic concepts of development with Adobe Experience Manager, AEM as well as developing with React. The tutorial covers both back-end and front-end development tasks.
 
