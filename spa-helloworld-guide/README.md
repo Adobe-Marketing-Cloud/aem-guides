@@ -20,9 +20,9 @@ The completed code files for the tutorial component can be found here:
 
 ### React Code
 
-* [HelloWorld.js](./src/react/components/HelloWorld.js)
-* [HelloWorld.css](./src/react/components/HelloWorld.css)
-* [ImportedComponents.js](./src/react/ImportComponents.js)
+* [HelloWorld.js](./src/react-app/components/HelloWorld.js)
+* [HelloWorld.css](./src/react-app/components/HelloWorld.css)
+* [ImportedComponents.js](./src/react-app/ImportComponents.js)
 
 ### Angular Code
 
