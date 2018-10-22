@@ -1,6 +1,6 @@
 /* HelloWorld.css to style HelloWorld component */
 
-.cmp-helloworld--message {
+.cmp-helloworld_message {
     text-align: center;
     color: #ff505e;
     text-transform: unset;
