@@ -2,13 +2,15 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:isCheckedOut="{Boolean}false"
     jcr:primaryType="cq:WorkflowModel"
-    jcr:uuid="684d9d83-9b9c-4153-b17e-0b811cdc9e22"
+    jcr:uuid="230ca312-e2a5-4f76-af72-4f6aafef71f9"
     sling:resourceType="cq/workflow/components/model"
     description="This workflow allows you to assign content to a user for review, submit for approval and publish following approval."
     title="Content Approval Workflow">
     <metaData
-        cq:lastModified="{Long}1484938758220"
+        cq:generatingPage="/conf/global/settings/workflow/models/aem-guides/content-approval-workflow/jcr:content"
+        cq:lastModified="{Long}1566240006864"
         cq:lastModifiedBy="admin"
+        jcr:predecessors="[]"
         jcr:primaryType="nt:unstructured"
         workflowStages="[Edit Content,Approval,Publish]"/>
     <nodes jcr:primaryType="nt:unstructured">
