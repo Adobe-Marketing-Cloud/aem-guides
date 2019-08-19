@@ -48,7 +48,7 @@
         <models jcr:primaryType="nt:unstructured">
             <contentapproval
                 jcr:primaryType="nt:unstructured"
-                modelId="/etc/workflow/models/aem-guides/content-approval-workflow/jcr:content/model"
+                modelId="/var/workflow/models/aem-guides/content-approval-workflow"
                 wizard="/apps/aem-guides/projects-tasks/projects/wizards/content-approval-start.html"/>
         </models>
     </workflows>

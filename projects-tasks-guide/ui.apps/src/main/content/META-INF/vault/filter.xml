@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/apps/aem-guides/projects-tasks"/>
-    <filter root="/etc/workflow/models/aem-guides/content-approval-workflow" />
+    <filter root="/conf/global/settings/workflow/models/aem-guides" />
+    <filter root="/var/workflow/models/aem-guides" />
 </workspaceFilter>
